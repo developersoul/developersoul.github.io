@@ -1,4 +1,4 @@
-# Making wordpress shortcodes with react
+## Making wordpress shortcodes with react
 
 When I used to create wordpress themes, I start first doing shortcodes, to that way have some sort of modularity that allow me to move things around without any problem and reuse it easily on all the pages and layouts.
 
