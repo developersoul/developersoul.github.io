@@ -14,7 +14,7 @@ I look out for packages on npm and I don’t find anything that fit with that re
 So I create a package to help me to render dynamically each component multiple times with his own props.
 Below his basic implementation:
 
-```js
+```javascript
 import React from "react";
 import { render } from "react-dom";
 
@@ -36,19 +36,19 @@ What makes is simple:
 
 First check if exists the selector checking if has more then one existing node:
 
-```js
+```javascript
 if (document.querySelectorAll(selector).length >= 1)
 ```
 
 Second convert nodelist to array. the three dots is a feature of es6 call spread operator.
 
-```js
+```javascript
 let containers = [...document.querySelectorAll(selector)];
 ```
 
 Third get the data props attribute of each node and parse it to json and if hasn't the attribute return a empty object.
 
-```js
+```javascript
 let props = el.getAttribute("data-props")
   ? JSON.parse(el.getAttribute("data-props"))
   : {};
@@ -56,6 +56,6 @@ let props = el.getAttribute("data-props")
 
 And finally render the component with the api createElement that get a component and create a new one with the props pass it. we use object rest spread to pass all props that we get from the attribute data-props.
 
-```js
+```javascript
 render(React.createElement(component, { ...props }), el);
 ```
